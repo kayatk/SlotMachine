@@ -21,7 +21,7 @@ const noOflines = () => {
     const lines =parseInt(noLines)
 
     if(isNaN(lines) || (lines <= 0)){
-        console.log("You Have Entered Wrong amount. Please Try Again !")  
+        console.log("You Have Entered Invalid input. Please Try Again !")  
     }
     else{
         return lines
