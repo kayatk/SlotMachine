@@ -17,7 +17,7 @@ const deposit =() => {
 //To Get Number Lines From User
 const noOflines = () => {
     while(true){
-    const noLines = prompt("Enter the Number of Lines to Bet: ")
+    const noLines = prompt("Enter the Number of Lines to Bet(1-3): ")
     const lines =parseInt(noLines)
 
     if(isNaN(lines) || (lines <= 0)){
