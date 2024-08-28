@@ -20,7 +20,7 @@ const noOflines = () => {
     const noLines = prompt("Enter the Number of Lines to Bet(1-3): ")
     const lines =parseInt(noLines)
 
-    if(isNaN(lines) || (lines <= 0)){
+    if(isNaN(lines) || (lines <= 0) || (lines >=4)){
         console.log("You Have Entered Invalid input. Please Try Again !")  
     }
     else{
