@@ -62,8 +62,17 @@ const getBetAmount =(balance,lines) =>{
 
 //Spin the wheel , Select Random value on each Row and Column
 
+const spin =()=>{
+    const symbols =[]
+    for([sym,no]of Object.entries(SYMBOL_COUNT)){
+        for(let i=0;i<no;i++){
+            symbols.push(sym)
+        }
+    }
+  //  console.log(symbols)
+}
 
-
+spin()
 let balance =deposit()
 const noOfLines=noOflines()
 const am =getBetAmount(balance,noOfLines)
