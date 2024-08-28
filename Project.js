@@ -54,8 +54,7 @@ const getBetAmount =(balance,lines) =>{
     if(isNaN(betAmount) || (betAmount <= 0) || (betAmount >balance/lines)){
         console.log("You Have Entered Invalid Bet Amount. Please Try Again !")  
     }
-    else{
-        
+    else{  
         return betAmount
     }
     }
