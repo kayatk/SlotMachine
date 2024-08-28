@@ -70,9 +70,20 @@ const spin =()=>{
         }
     }
   //  console.log(symbols)
+  const reels =[[],[],[]]
+  for(let i=0;i<COL;i++){
+    const copySymbols =[...symbols]
+    for(let y=0;y<ROW;y++){
+        const randomNumber =Math.floor(Math.random() * copySymbols.length)
+        const selectedindex = copySymbols[randomNumber]
+        reels[i].push(selectedindex) 
+        copySymbols.splice(randomNumber,1)
+    }
+  }
+  return reels;
 }
 
-spin()
+console.log(spin())
 let balance =deposit()
 const noOfLines=noOflines()
 const am =getBetAmount(balance,noOfLines)
