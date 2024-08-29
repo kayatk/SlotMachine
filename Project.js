@@ -96,11 +96,27 @@ const transpose=(reels)=>{
     return row
 }
 
+//printrows with pip
+const printRows=(rows) =>{
+    for(let row of rows){
+        let rowString=""
+    for(const[i,symbolss] of row.entries()){
+            rowString += symbolss
+            if(i != row.length-1){
+                rowString += " | "
+            }
+    }
+    console.log(rowString)
+    }
+    
+}
 
 const reel = spin()
 console.log(reel)
-console.log(transpose(reel))
+const col= transpose(reel)
 let balance =deposit()
 const noOfLines=noOflines()
 const am =getBetAmount(balance,noOfLines)
+
+printRows(col)
 
