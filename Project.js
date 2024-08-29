@@ -131,14 +131,30 @@ const getWinning=(rows,bet,lines)=>{
    
 }
 
+const game=()=>{
+    let balance =deposit()
+    while(true){
+        console.log("YOU HAVE A BALANCE OF $"+balance)
+        const reel = spin()
+        //console.log(reel)
+        const noOfLines=noOflines()
+        const bet =getBetAmount(balance,noOfLines)
+        balance -=bet * noOfLines
+        const row= transpose(reel)
+        printRows(row)
+        const winning = getWinning(row,bet,noOfLines)
+        balance += winning
+        console.log("YOU WON $"+winning)
 
-const reel = spin()
-console.log(reel)
-const row= transpose(reel)
-let balance =deposit()
-const noOfLines=noOflines()
-const bet =getBetAmount(balance,noOfLines)
+        if (balance ==0){
+            console.log("You are running out of balance")
+            break
+        }
+        const continuePlay = prompt("Do you want to play (y/n)")
+        if(continuePlay!= "y")break;
+    }
+}
 
-printRows(row)
-const winning = getWinning(row,bet,noOfLines)
-console.log(winning)
+ game()
+
+
