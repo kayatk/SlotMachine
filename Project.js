@@ -84,8 +84,23 @@ const spin =()=>{
   return reels;
 }
 
-console.log(spin())
+//Change the reel in column to row format 
+const transpose=(reels)=>{
+    const row =[]
+    for(let i=0;i<ROW;i++){
+        row.push([])
+        for (let y=0;y<COL;y++){
+            row[i].push(reels[y][i])
+        }
+    }
+    return row
+}
+
+
+const reel = spin()
+console.log(reel)
+console.log(transpose(reel))
 let balance =deposit()
 const noOfLines=noOflines()
 const am =getBetAmount(balance,noOfLines)
-const reel = spin()
+
