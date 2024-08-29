@@ -111,13 +111,34 @@ const printRows=(rows) =>{
 }
 
 //calculate the winnings based on row, no of lines bet to  and bet amount
+const getWinning=(rows,bet,lines)=>{
+    let winnings =0
+    for(let row=0;row<lines;row++){
+        const symbols =rows[row]
+        let allSame =true
+
+        for(const sym of symbols ){
+            if(sym != symbols[0]){
+                 allSame =false
+                 break
+            }
+        }
+        if(allSame){
+        winnings += bet * SYMBOL_VALUES[symbols[0]]
+        }
+    }
+    return winnings
+   
+}
+
 
 const reel = spin()
 console.log(reel)
-const col= transpose(reel)
+const row= transpose(reel)
 let balance =deposit()
 const noOfLines=noOflines()
-const am =getBetAmount(balance,noOfLines)
+const bet =getBetAmount(balance,noOfLines)
 
-printRows(col)
-
+printRows(row)
+const winning = getWinning(row,bet,noOfLines)
+console.log(winning)
