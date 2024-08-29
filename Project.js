@@ -107,9 +107,10 @@ const printRows=(rows) =>{
             }
     }
     console.log(rowString)
-    }
-    
+    } 
 }
+
+//calculate the winnings based on row, no of lines bet to  and bet amount
 
 const reel = spin()
 console.log(reel)
